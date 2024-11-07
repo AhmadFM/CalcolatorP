@@ -6,7 +6,8 @@
 
 
 ##  FUNCTION LIST   ##
-
+def kalkulatorKalori():
+    pass
 
 ##  MAIN PROGRAM    ##
 print("Hello,World")
