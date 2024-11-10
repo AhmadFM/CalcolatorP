@@ -1,4 +1,4 @@
-# CalcolatorP
+# Calcolator Project
 Aplikasi penghitung kalori
 
 ## Developer
