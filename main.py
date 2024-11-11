@@ -26,6 +26,36 @@ def tampilkan_profil(profilUser):
     print(f"Berat: {profilUser['berat']} kg")
     print(f"Tinggi: {profilUser['tinggi']} cm") 
 
+total kalori = 0
+listMakanan = []
+
+def kalkulator():
+    global totalKalori
+    totalKalori = 0 
+    listMakanan.clear()
+
+    databaseKalori = {
+        "nasi" : 300,
+        "ayam" : 100,
+        "sayur" : 60
+        "tempe" : 80
+    }
+
+    print("\n==== KALKULATOR KALORI ====")
+    jumlahMakanan = int(input("Masukan jumlah jenis makanan yang anda makan: ")
+
+    for i in range (jumlahMakanan):
+        namaMakanan = input("masukan nama makanan: ")
+        listMakanan.append(namaMakanan)
+
+        if namaMakanan in databaseKalori:
+            totalKalori += databaseKalori[namaMakanan]
+        else:
+            print("Nama makanan belum terdaftar dalam database!")
+
+    print(f"Total kalori yang anda makan (dalam gram) dari {listMakanan}: {totalKalori}")
+
+
 def menu_utama ():
     print("\n=== Menu Utama ===")
     print("1. Profil")
