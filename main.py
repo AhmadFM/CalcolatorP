@@ -6,8 +6,6 @@
 
 
 ##  FUNCTION LIST   ##
-def kalkulatorKalori():
-    pass
 
 ##  MAIN PROGRAM    ##
 def profil():
