@@ -35,10 +35,61 @@ def kalkulator():
     listMakanan.clear()
 
     databaseKalori = {
-        "nasi" : 300,
-        "ayam" : 100,
-        "sayur" : 60
-        "tempe" : 80
+        "nasi" : 175,                        #per100gr
+        "kentang" : 87,
+        "singkong" : 160,
+        "ubi jalar" : 86,
+        "Dada ayam goreng (dengan kulit)" : 216,
+        "Dada ayam goreng (tanpa kulit)" : 184,
+        "Bebek goreng" : 286,
+        "Ikan lele goreng" : 105,
+        "Bakso sapi" : 202,
+        "Chicken nugget" : 297,
+        "Telur rebus" : 68,
+        "Telur dadar" : 93,
+        "Telur ceplok" : 92,
+        "Tempe goreng" : 118,
+        "Tempe bacem" : 119,
+        "Tahu isi" : 124,
+        "Tahu" : 113,
+        "Sambel goreng kentang" : 107,
+        "Pepaya" : 39,
+        "Melon" : 34,
+        "Pisang" : 89,
+        "Buah pir" : 58,
+        "Nanas" : 48,
+        "Apel" : 72,
+        "Buah naga" : 51,
+        "Mangga" : 65,
+        "Anggur" : 69,
+        "Sayur" : 60,
+        "Daging sapi" : 288,
+        "Daging sapi panggang" : 267,
+        "Udang goreng" : 287,
+        "Ikan salmon" : 146,
+        "Bayam" : 40,
+        "Kacang almond" : 597,
+        "Yogurt (polos)" : 61,
+        "Susu" : 50, 
+        "Kacang kedelai" : 471,
+        "Daging kambing" : 109,
+        "Gulai kambing" : 125,
+        "Daging domba" : 266,
+        "Daging bebek" : 132,
+        "Ikan salmon" : 146,
+        "Cappucino" : 440,
+        "Mie instan" 137,
+        "Kacang tanah" : 567,
+        "Kacang rebus" : 318,
+        "Kacang panjang" : 59,
+        "Kerang hijau" : 171,
+        "Kerang" : 217,
+        "Keju" : 403,
+        
+        
+        
+
+
     }
 
     print("\n==== KALKULATOR KALORI ====")
