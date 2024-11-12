@@ -3,11 +3,77 @@
 ###########################
 
 ##  VARIABEL UNIVERSAL  ##
+total kalori = 0
 
+listMakanan = []
 
+databaseKalori = {#per100gr
+    "nasi" : 175,                        
+    "kentang" : 87,
+    "singkong" : 160,
+    "ubi jalar" : 86,
+    "Dada ayam goreng (dengan kulit)" : 216,
+    "Dada ayam goreng (tanpa kulit)" : 184,
+    "Bebek goreng" : 286,
+    "Ikan lele goreng" : 105,
+    "Bakso sapi" : 202,
+    "Chicken nugget" : 297,
+    "Telur rebus" : 68,
+    "Telur dadar" : 93,
+    "Telur ceplok" : 92,
+    "Tempe goreng" : 118,
+    "Tempe bacem" : 119,
+    "Tahu isi" : 124,
+    "Tahu" : 113,
+    "Sambel goreng kentang" : 107,
+    "Pepaya" : 39,
+    "Melon" : 34,
+    "Pisang" : 89,
+    "Buah pir" : 58,
+    "Nanas" : 48,
+    "Apel" : 72,
+    "Buah naga" : 51,
+    "Mangga" : 65,
+    "Anggur" : 69,
+    "Sayur" : 60,
+    "Daging sapi" : 288,
+    "Daging sapi panggang" : 267,
+    "Udang goreng" : 287,
+    "Ikan salmon" : 146,
+    "Bayam" : 40,
+    "Kacang almond" : 597,
+    "Yogurt (polos)" : 61,
+    "Susu" : 50, 
+    "Kacang kedelai" : 471,
+    "Daging kambing" : 109,
+    "Gulai kambing" : 125,
+    "Daging domba" : 266,
+    "Daging bebek" : 132,
+    "Ikan salmon" : 146,
+    "Cappucino" : 440,
+    "Mie instan": 137,
+    "Kacang tanah" : 567,
+    "Kacang rebus" : 318,
+    "Kacang panjang" : 59,
+    "Kerang hijau" : 171,
+    "Kerang" : 217,
+    "Keju" : 403
+}
+
+##   PROCEDURE LIST   ##
+def tampilkan_profil(profilUser):
+    print("\n=== Profil ===")
+    print(f"Nama: {profilUser['nama']}")
+    print(f"Umur: {profilUser['umur']} tahun")
+    print(f"Berat: {profilUser['berat']} kg")
+    print(f"Tinggi: {profilUser['tinggi']} cm") 
+   
+def menu_utama ():
+    print("\n=== Menu Utama ===")
+    print("1. Profil")
+    print("2. Hitung Kalori Harian")
+    print("3. Keluar")
 ##  FUNCTION LIST   ##
-
-##  MAIN PROGRAM    ##
 def profil():
    profilUser = {
         "nama": input ("Masukkan nama: "),
@@ -17,79 +83,11 @@ def profil():
     }   
    return profilUser
 
-def tampilkan_profil(profilUser):
-    print("\n=== Profil ===")
-    print(f"Nama: {profilUser['nama']}")
-    print(f"Umur: {profilUser['umur']} tahun")
-    print(f"Berat: {profilUser['berat']} kg")
-    print(f"Tinggi: {profilUser['tinggi']} cm") 
-
-total kalori = 0
-listMakanan = []
-
 def kalkulator():
     global totalKalori
     totalKalori = 0 
     listMakanan.clear()
-
-    databaseKalori = {
-        "nasi" : 175,                        #per100gr
-        "kentang" : 87,
-        "singkong" : 160,
-        "ubi jalar" : 86,
-        "Dada ayam goreng (dengan kulit)" : 216,
-        "Dada ayam goreng (tanpa kulit)" : 184,
-        "Bebek goreng" : 286,
-        "Ikan lele goreng" : 105,
-        "Bakso sapi" : 202,
-        "Chicken nugget" : 297,
-        "Telur rebus" : 68,
-        "Telur dadar" : 93,
-        "Telur ceplok" : 92,
-        "Tempe goreng" : 118,
-        "Tempe bacem" : 119,
-        "Tahu isi" : 124,
-        "Tahu" : 113,
-        "Sambel goreng kentang" : 107,
-        "Pepaya" : 39,
-        "Melon" : 34,
-        "Pisang" : 89,
-        "Buah pir" : 58,
-        "Nanas" : 48,
-        "Apel" : 72,
-        "Buah naga" : 51,
-        "Mangga" : 65,
-        "Anggur" : 69,
-        "Sayur" : 60,
-        "Daging sapi" : 288,
-        "Daging sapi panggang" : 267,
-        "Udang goreng" : 287,
-        "Ikan salmon" : 146,
-        "Bayam" : 40,
-        "Kacang almond" : 597,
-        "Yogurt (polos)" : 61,
-        "Susu" : 50, 
-        "Kacang kedelai" : 471,
-        "Daging kambing" : 109,
-        "Gulai kambing" : 125,
-        "Daging domba" : 266,
-        "Daging bebek" : 132,
-        "Ikan salmon" : 146,
-        "Cappucino" : 440,
-        "Mie instan" 137,
-        "Kacang tanah" : 567,
-        "Kacang rebus" : 318,
-        "Kacang panjang" : 59,
-        "Kerang hijau" : 171,
-        "Kerang" : 217,
-        "Keju" : 403,
-        
-        
-        
-
-
-    }
-
+   
     print("\n==== KALKULATOR KALORI ====")
     jumlahMakanan = int(input("Masukan jumlah jenis makanan yang anda makan: ")
 
@@ -104,14 +102,6 @@ def kalkulator():
 
     print(f"Total kalori yang anda makan (dalam gram) dari {listMakanan}: {totalKalori}")
 
-
-def menu_utama ():
-    print("\n=== Menu Utama ===")
-    print("1. Profil")
-    print("2. Hitung Kalori Harian")
-    print("3. Keluar")
-
-
 def opsi_menu(profilUser):
     pilihan = input("Pilih opsi (1-3): ")
     if pilihan == '1':
@@ -125,7 +115,6 @@ def opsi_menu(profilUser):
         print("Keluar")
     else:
         print("Pilihan tidak valid. Silakan coba lagi.")
-
     return profilUser
     
 def main():
@@ -135,5 +124,6 @@ def main():
         profilUser  = opsi_menu(profilUser )
         if not profilUser  and input("Apakah Anda ingin keluar? (y/n): ").lower() == 'y':
             break
-
+           
+##  MAIN PROGRAM    ##
 main()
