@@ -3,7 +3,7 @@
 ###########################
 
 ##  VARIABEL UNIVERSAL  ##
-total kalori = 0
+total_kalori = 0
 
 listMakanan = []
 
@@ -89,7 +89,7 @@ def kalkulator():
     listMakanan.clear()
    
     print("\n==== KALKULATOR KALORI ====")
-    jumlahMakanan = int(input("Masukan jumlah jenis makanan yang anda makan: ")
+    jumlahMakanan = int(input("Masukan jumlah jenis makanan yang anda makan: "))
 
     for i in range (jumlahMakanan):
         namaMakanan = input("masukan nama makanan: ")
