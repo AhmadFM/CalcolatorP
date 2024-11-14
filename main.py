@@ -110,7 +110,7 @@ def opsi_menu(profilUser):
         else: 
             tampilkan_profil(profilUser)
     elif pilihan == '2':
-        print("Hitung Kalori Harian")   
+        kalkulator()  
     elif pilihan == '3':
         print("Keluar")
     else:
