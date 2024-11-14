@@ -114,7 +114,7 @@ def opsi_menu(profilUser):
         else: 
             tampilkan_profil(profilUser)
     elif pilihan == '2':
-        kalkulator() 
+        kalkulator()   
     elif pilihan == '3':
         main()
     else:
