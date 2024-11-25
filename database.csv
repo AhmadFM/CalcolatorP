@@ -3,7 +3,7 @@ SE001,Beras,Serealia,Mentah,357
 SE002,Beras pelita,Serealia,Mentah,369
 SE003,Beras rojolele,Serealia,Mentah,357
 SE004,Beraa Hitam ,Serealia,Mentah,351
-BU001,A6:E33,apel,Buah,Mentah,58
+BU001,apel,Buah,Mentah,58
 BU002,alpukat,Buah,Mentah,85
 BU003,anggur,Buah,Mentah,30
 BU004,belimbing,Buah,Mentah,36
@@ -12,7 +12,7 @@ BU006,duku,Buah,Mentah,63
 BU007,jambu biji,Buah,Mentah,49
 BU008,jambu air,Buah,Mentah,46
 BU009,jambu bol,Buah,Mentah,49
-BU010,jeruk	Buah,Mentah,45
+BU010,jeruk,Buah,Mentah,45
 BU011,jeruk bali,Buah,Mentah,48
 BU012,kelapa,Buah,Mentah,68
 BU013,langsat,Buah,Mentah,56
