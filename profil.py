@@ -12,17 +12,30 @@ def tampilkan_profil(profilUser):
     print(f"Target: {profilUser['target']}")
     print("Kebutuhan Kalori Harian: ", kebutuhanKaloriHarian(profilUser['jenisKelamin'], profilUser['berat'], profilUser['tinggi'], profilUser['umur'], profilUser['skalaAktivitas']))
    
-def kebutuhanKaloriHarian(a, b, c, d, e = float()):
+def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas = float()):
     
-    if a == "pria":
-        lakiLaki = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
-        return lakiLaki
-    elif a == "wanita":
-        perempuan = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
-        return perempuan
+    if jeniskelamin == "pria":
+        kebutuhan = 66.5 + (13.75 * berat) + (5.003 * tinggi) - (6.75 * umur)
+        # lakiLaki = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
+        return kebutuhan
+    elif jeniskelamin == "wanita":
+        kebutuhan = 655.1 + (9.563 * berat) + (1.850 * tinggi) - (4.676 * umur)
+        # perempuan = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
+        return kebutuhan
     else:
-        errormistake = "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA"
-        return errormistake
+        return "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA."
+    
+    kaloriDaily = round(kebutuhan * skalaAktivitas, 2)
+
+    if target.lower() == "turun":
+        return round(kaloriDaily - 500, 2)
+    elif target.lower() == "naik":
+        return round(kaloriDaily + 500, 2)
+    elif target.lower() == "tetap":
+        return kaloriDaily
+    else:
+        return "Error: GAUSAH NGADI NGADI CUMAN BISA 'TURUN', 'TETAP', DAN 'NAIK'."
+
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
     profilUser = {
@@ -32,7 +45,7 @@ def buat_profil():
         "umur": float(input("Masukkan umur: ")),
         "berat": float(input("Masukkan berat (kg): ")),
         "tinggi": float(input("Masukkan tinggi (cm): ")),
-        "target": str(input("Target Berat Badan (Turun/Tetap/Naik): "))
+        "target": str(input("Target Berat Badan (Turun/Tetap/Naik): ")).lower()
     }
     return profilUser
 
