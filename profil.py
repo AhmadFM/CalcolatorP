@@ -21,7 +21,7 @@ def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas, tar
     else:
         return "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA."
     
-    kaloriDaily = round(kebutuhan * skalaAktivitas, 2)
+    kaloriDaily = round(kebutuhan, 2)
 
     if target.lower() == "turun":
         return round(kaloriDaily - 500, 2)
