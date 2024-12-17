@@ -14,18 +14,20 @@ def tampilkan_profil(profilUser):
    
 def kebutuhanKaloriHarian(a, b, c, d, e = float()):
     
-    if a == "Pria":
+    if a == "pria":
         lakiLaki = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
         return lakiLaki
-    elif a == "Wanita":
+    elif a == "wanita":
         perempuan = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
         return perempuan
-
+    else:
+        errormistake = "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA"
+        return errormistake
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
     profilUser = {
         "nama": input("Masukkan nama: "),
-        "jenisKelamin": input("Masukkan Jenis Kelamin (Pria/Wanita): "),
+        "jenisKelamin": input("Masukkan Jenis Kelamin (Pria/Wanita): ".lower()),
         "skalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
         "umur": float(input("Masukkan umur: ")),
         "berat": float(input("Masukkan berat (kg): ")),
