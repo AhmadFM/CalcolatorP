@@ -16,11 +16,9 @@ def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas = fl
     
     if jeniskelamin == "pria":
         kebutuhan = 66.5 + (13.75 * berat) + (5.003 * tinggi) - (6.75 * umur)
-        # lakiLaki = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
         return kebutuhan
     elif jeniskelamin == "wanita":
         kebutuhan = 655.1 + (9.563 * berat) + (1.850 * tinggi) - (4.676 * umur)
-        # perempuan = (66.5 + (13.75 * b) + (5.003 * c) - (6.75 * d)) * e
         return kebutuhan
     else:
         return "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA."
