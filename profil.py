@@ -30,7 +30,7 @@ def buat_profil():
         "umur": float(input("Masukkan umur: ")),
         "berat": float(input("Masukkan berat (kg): ")),
         "tinggi": float(input("Masukkan tinggi (cm): ")),
-        "target": input("Target Berat Badan (Turun/Tetap/Naik): ")
+        "target": str(input("Target Berat Badan (Turun/Tetap/Naik): "))
     }
     return profilUser
 
