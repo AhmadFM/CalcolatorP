@@ -1,5 +1,10 @@
 # kalkulator.py
-from database import databaseKalori
+# from database import databaseKalori
+import pandas as pd
+
+data = pd.read_csv("database.csv")
+data ['Nama Makanan'] = data ['Nama Makanan'].str.lower()
+databaseKalori = data.set_index('Nama Makanan').to_dict()['Kalori']
 
 totalKalori = 0
 listMakanan = []
