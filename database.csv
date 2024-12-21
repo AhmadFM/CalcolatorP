@@ -3,34 +3,34 @@ SE001,Beras,Serealia,Mentah,357
 SE002,Beras pelita,Serealia,Mentah,369
 SE003,Beras rojolele,Serealia,Mentah,357
 SE004,Beras Hitam ,Serealia,Mentah,351
-BU001,apel,Buah,Mentah,58
-BU002,alpukat,Buah,Mentah,85
-BU003,anggur,Buah,Mentah,30
-BU004,belimbing,Buah,Mentah,36
-BU005,buah naga,Buah,Mentah,71
-BU006,duku,Buah,Mentah,63
-BU007,jambu biji,Buah,Mentah,49
-BU008,jambu air,Buah,Mentah,46
-BU009,jambu bol,Buah,Mentah,49
-BU010,jeruk,Buah,Mentah,45
-BU011,jeruk bali,Buah,Mentah,48
-BU012,kelapa,Buah,Mentah,68
-BU013,langsat,Buah,Mentah,56
-BU014,lemon,Buah,Mentah,34
-BU015,mangga,Buah,Mentah,52
-BU016,manggis,Buah,Mentah,63
-BU017,melon,Buah,Mentah,37
-BU018,nanas,Buah,Mentah,40
-BU019,nangka,Buah,Mentah,106
-BU020,pepaya,Buah,Mentah,46
-BU021,pisang,Buah,Mentah,127
-BU022,rambutan,Buah,Mentah,69
-BU023,salak,Buah,Mentah,77
-BU024,sawo,Buah,Mentah,111
-BU025,semangka,Buah,Mentah,28
-BU026,sirsak,Buah,Mentah,65
-BU027,srikaya,Buah,Mentah,63
-BU028,sukun,Buah,Mentah,126
+BU001,Apel,Buah,Mentah,58
+BU002,Alpukat,Buah,Mentah,85
+BU003,Anggur,Buah,Mentah,30
+BU004,Belimbing,Buah,Mentah,36
+BU005,Buah naga,Buah,Mentah,71
+BU006,Duku,Buah,Mentah,63
+BU007,Jambu biji,Buah,Mentah,49
+BU008,Jambu air,Buah,Mentah,46
+BU009,Jambu bol,Buah,Mentah,49
+BU010,Jeruk,Buah,Mentah,45
+BU011,Jeruk bali,Buah,Mentah,48
+BU012,Kelapa,Buah,Mentah,68
+BU013,Langsat,Buah,Mentah,56
+BU014,Lemon,Buah,Mentah,34
+BU015,Mangga,Buah,Mentah,52
+BU016,Manggis,Buah,Mentah,63
+BU017,Melon,Buah,Mentah,37
+BU018,Nanas,Buah,Mentah,40
+BU019,Nangka,Buah,Mentah,106
+BU020,Pepaya,Buah,Mentah,46
+BU021,Pisang,Buah,Mentah,127
+BU022,Rambutan,Buah,Mentah,69
+BU023,Salak,Buah,Mentah,77
+BU024,Sawo,Buah,Mentah,111
+BU025,Semangka,Buah,Mentah,28
+BU026,Sirsak,Buah,Mentah,65
+BU027,Srikaya,Buah,Mentah,63
+BU028,Sukun,Buah,Mentah,126
 SE005,Beras jagung kuning,Serealia,Mentah,358
 SE006,Beras jagung putih,Serealia,Mentah,307
 SE007,Beras ketan hitam tumbuk,Serealia,Mentah,360
@@ -52,3 +52,13 @@ SE021,Nasi,Serealia,Olahan,180
 SE022,Nasi tim,Serealia,Olahan,120
 SE023,Tapai beras,Serealia,Olahan,99
 SE024,Tepung beras,Serealia,Olahan,353
+KA001,Tempe, Kacang-kacangan,Olahan, 118
+KA002,Tempe bacem,Kacang-kacangan,Olahan,119
+KA003,Tahu,Kacang-kacangan,Olahan,113
+DA001,Dada ayam goreng(dengan kulit),Daging,Mentah,216
+DA002,Dada ayam goreng (tanpa kulit),Daging,Mentah,184
+DA003,Bebek goreng,Daging,Olahan,286
+DA004,Ikan lele goreng,Daging,Olahan,105
+DA005,Bakso sapi,Daging,Olahan,202
+DA006,Chicken nugget,Daging,Olahan,297
+

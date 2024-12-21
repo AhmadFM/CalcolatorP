@@ -17,7 +17,7 @@ def daftarInformasiKalori():
 
     # Loop input nama makanan
     for i in range(jumlahInformasiMakanan):
-        cariMakanan = input(f"Masukkan nama makanan ke-{i + 1}: ")
+        cariMakanan = input(f"Masukkan nama makanan (huruf awal kapital) ke-{i + 1}: ")
         listMakananUser.append(cariMakanan)
 
     print("\nMencari informasi kalori...")
