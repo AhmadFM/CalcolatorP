@@ -20,14 +20,25 @@ def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas, tar
     else:
         return "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA."
     
-    kaloriDaily = round(kebutuhan, 2)
+    if skalaAktivitas == 1:
+        kaloriDaily = kebutuhan * 1.2
+    elif skalaAktivitas == 2:
+        kaloriDaily = kebutuhan * 1.375
+    elif skalaAktivitas == 3:
+        kaloriDaily = kebutuhan * 1.55
+    elif skalaAktivitas == 4:
+        kaloriDaily = kebutuhan * 1.725
+    elif skalaAktivitas == 5:
+        kaloriDaily = kebutuhan * 1.9
+    else:
+        return "Skala aktivitas tidak valid. Harus antara 1-5."
 
     if target.lower() == "turun":
         return round(kaloriDaily - 500, 2)
     elif target.lower() == "naik":
         return round(kaloriDaily + 500, 2)
     elif target.lower() == "tetap":
-        return kaloriDaily
+        return round(kaloriDaily,2)
     else:
         return "Error: GAUSAH NGADI NGADI CUMAN BISA 'TURUN', 'TETAP', DAN 'NAIK'."
 
@@ -67,19 +78,20 @@ def profil(profilUser):
         print("\n=== Buat Profil Baru ===")
         profilUser = buat_profil()
     else:
-        print("\n=== Menu Profil ===")
-        print("1. Lihat Profil")
-        print("2. Edit Profil")
-        print("3. Cek Kebutuhan Kalori")
-        pilihan = input("Pilih opsi (1-3): ")
+        while True: 
+            print("\n=== Menu Profil ===")
+            print("1. Lihat Profil")
+            print("2. Edit Profil")
+            print("3. Cek Kebutuhan Kalori")
+            pilihan = input("Pilih opsi (1-3): ")
 
-        if pilihan == '1':
-            tampilkan_profil(profilUser)
-        elif pilihan == '2':
-            profilUser = edit_profil(profilUser)
-        elif pilihan == '3':
-            print(kebutuhanKaloriHarian(profilUser['jenisKelamin'], profilUser['berat'], profilUser['tinggi'], profilUser['umur'], profilUser['skalaAktivitas'], profilUser['target']))
-            
-        else:
-            print("Pilihan tidak valid. Silakan coba lagi.")
+            if pilihan == '1':
+                tampilkan_profil(profilUser)
+            elif pilihan == '2':
+                profilUser = edit_profil(profilUser)
+            elif pilihan == '3':
+                print(kebutuhanKaloriHarian(profilUser['jenisKelamin'], profilUser['berat'], profilUser['tinggi'], profilUser['umur'], profilUser['skalaAktivitas'], profilUser['target']))
+                
+            else:
+                print("Pilihan tidak valid. Silakan coba lagi.")
     return profilUser
