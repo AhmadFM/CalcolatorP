@@ -1,5 +1,4 @@
 # profil.py
-from database import databaseKalori
 
 def tampilkan_profil(profilUser):
     print("\n=== Profil ===")
