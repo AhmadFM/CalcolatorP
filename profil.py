@@ -77,8 +77,7 @@ def profil(profilUser):
     if not profilUser:
         print("\n=== Buat Profil Baru ===")
         profilUser = buat_profil()
-    else:
-        while True: 
+    else: 
             print("\n=== Menu Profil ===")
             print("1. Lihat Profil")
             print("2. Edit Profil")
