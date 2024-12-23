@@ -3,7 +3,7 @@ import pandas as pd
 def rekomendasi_makanan(target, kalori_harian, kategori):
     data = pd.read_csv("database.csv")
 
-    faktor = 0.9 if target == 'turun' else 1.1 if target == 'tetap' else 1.1
+    faktor = 0.9 if target == 'turun' else 1.1 if target == 'naik' else 1.1
 
     limit_kalori = kalori_harian * faktor
 

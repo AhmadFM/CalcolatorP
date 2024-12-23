@@ -29,21 +29,16 @@ def opsi_menu(profilUser ):
             # Input kategori menu
             kategori_menu = input("Pilih kategori menu (sarapan/makan siang/makan malam): ").lower()
 
-            if kategori_menu in ['sarapan', 'makan siang', 'makan malam']:
-                
-            
             # Panggil fungsi rekomendasi makanan
-                rekomendasi = rekomendasi_makanan(profilUser ['target'], kalori_harian, kategori_menu)
-                if rekomendasi:
-                    print("\n==== Rekomendasi Makanan ====")
-                    print(f"Karbohidrat: {rekomendasi['Karbohidrat']}")
-                    print(f"Makanan Lain: {', '.join(rekomendasi['Makanan Lain'])}")
-                else:
-                    print("Maaf, tidak ada rekomendasi makanan yang tersedia untuk kategori ini.")
+            rekomendasi = rekomendasi_makanan(profilUser ['target'], kalori_harian, kategori_menu)
+            if rekomendasi:
+                print("\n==== Rekomendasi Makanan ====")
+                print(f"Karbohidrat: {rekomendasi['Karbohidrat']}")
+                print(f"Makanan Lain: {', '.join(rekomendasi['Makanan Lain'])}")
             else:
-                print("Kategori menu tidak valid. Silakan coba lagi.")
+                print("Maaf, tidak ada rekomendasi makanan yang tersedia untuk kategori ini.")
         else:
-            print("Silahkan buat profil terlebih dahulu")
+            print("Anda belum memiliki profil. Silakan buat profil terlebih dahulu.")
     elif pilihan == '5':
         print("=== Exit ===")
         return profilUser , True  # Menandakan bahwa pengguna memilih keluar
