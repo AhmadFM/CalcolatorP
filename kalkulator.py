@@ -2,7 +2,7 @@
 # from database import databaseKalori
 import pandas as pd
 
-data = pd.read_csv("database.csv")
+data = pd.read_csv("database1.csv")
 data ['Nama Makanan'] = data ['Nama Makanan'].str.lower()
 databaseKalori = data.set_index('Nama Makanan').to_dict()['Kalori']
 
