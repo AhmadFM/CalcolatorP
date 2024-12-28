@@ -3,7 +3,7 @@ import pandas as pd
 from profil import profil, kebutuhan_kalori_harian
 from kalkulator import kalkulator
 from informasi_kalori import daftar_informasi_kalori
-from rekomendasiMakanan import rekomendasi_menu
+from rekomendasi_makanan import rekomendasi_menu
 
 
 def menuUtama():
