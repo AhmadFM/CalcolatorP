@@ -1,43 +1,48 @@
 # profil.py
 
-def tampilkan_profil(profilUser):
+def tampilkanProfil(profilUser):
     print("\n=== Profil ===")
-    print(f"Nama: {profilUser['nama']}")
-    print(f"Umur: {profilUser['umur']} tahun")
-    print(f"Jenis Kelamin: {profilUser['jenisKelamin']}")
-    print(f"Berat: {profilUser['berat']} kg")
-    print(f"Tinggi: {profilUser['tinggi']} cm")
-    print(f"Skala Aktivitas Fisik: {profilUser['skalaAktivitas']}")
-    print(f"Target: {profilUser['target']}")
-    print("Kebutuhan Kalori Harian: ", kebutuhanKaloriHarian(profilUser['jenisKelamin'], profilUser['berat'], profilUser['tinggi'], profilUser['umur'], profilUser['skalaAktivitas'], profilUser['target']))
+    print(f"Nama: {profilUser['Nama']}")
+    print(f"Umur: {profilUser['Umur']} tahun")
+    print(f"JenisKelamin: {profilUser['JenisKelamin']}")
+    print(f"Berat: {profilUser['Berat']} kg")
+    print(f"Tinggi: {profilUser['Tinggi']} cm")
+    print(f"Skala Aktivitas Fisik: {profilUser['SkalaAktivitas']}")
+    print(f"Target: {profilUser['Target']}")
+    print("Kebutuhan Kalori Harian: ", kebutuhan_kalori_harian(profilUser['JenisKelamin'], 
+                                                               profilUser['Berat'], 
+                                                               profilUser['Tinggi'], 
+                                                               profilUser['Umur'], 
+                                                               profilUser['SkalaAktivitas'], 
+                                                               profilUser['Target']))
    
-def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas, target):
+def kebutuhan_kalori_harian(JK, BB, TB, Umur, Skala, Target):
     
-    if jeniskelamin == "pria":
-        kebutuhan = 66.5 + (13.75 * berat) + (5.003 * tinggi) - (6.75 * umur)
-    elif jeniskelamin == "wanita":
-        kebutuhan = 655.1 + (9.563 * berat) + (1.850 * tinggi) - (4.676 * umur)
+    if JK == "pria":
+        kebutuhan = 66.5 + (13.75 * BB) + (5.003 * TB) - (6.75 * Umur)
+    elif JK == "wanita":
+        kebutuhan = 655.1 + (9.563 * BB) + (1.850 * TB) - (4.676 * Umur)
     else:
         return "KAMI TIDAK MENERIMA LGBTQ+, KAMI HANYA MENERIMA PRIA DAN WANITA."
     
-    if skalaAktivitas == 1:
+    if Skala == 1:
         kaloriDaily = kebutuhan * 1.2
-    elif skalaAktivitas == 2:
+    elif Skala == 2:
         kaloriDaily = kebutuhan * 1.375
-    elif skalaAktivitas == 3:
+    elif Skala == 3:
         kaloriDaily = kebutuhan * 1.55
-    elif skalaAktivitas == 4:
+    elif Skala == 4:
         kaloriDaily = kebutuhan * 1.725
-    elif skalaAktivitas == 5:
+    elif Skala == 5:
         kaloriDaily = kebutuhan * 1.9
     else:
         return "Skala aktivitas tidak valid. Harus antara 1-5."
 
-    if target.lower() == "turun":
+    if Target.lower() == "turun":
         return round(kaloriDaily - 500, 2)
-    elif target.lower() == "naik":
+    elif Target.lower() == "naik":
         return round(kaloriDaily + 500, 2)
-    elif target.lower() == "tetap":
+    elif Target.lower() == "tetap":
         return round(kaloriDaily,2)
     else:
         return "Error: GAUSAH NGADI NGADI CUMAN BISA 'TURUN', 'TETAP', DAN 'NAIK'."
@@ -45,29 +50,29 @@ def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas, tar
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
     profilUser = {
-        "nama": input("Masukkan nama: "),
-        "jenisKelamin": input("Masukkan Jenis Kelamin (Pria/Wanita): ".lower()),
-        "skalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
-        "umur": float(input("Masukkan umur: ")),
-        "berat": float(input("Masukkan berat (kg): ")),
-        "tinggi": float(input("Masukkan tinggi (cm): ")),
-        "target": str(input("Target Berat Badan (Turun/Tetap/Naik): ")).lower()
+        "Nama": input("Masukkan Nama: "),
+        "JenisKelamin": input("Masukkan JenisKelamin (Pria/Wanita): ".lower()),
+        "SkalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
+        "Umur": float(input("Masukkan Umur: ")),
+        "Berat": float(input("Masukkan Berat (kg): ")),
+        "Tinggi": float(input("Masukkan Tinggi (cm): ")),
+        "Target": str(input("Target Berat Badan (Turun/Tetap/Naik): ")).lower()
     }
     return profilUser
 
 def edit_profil(profilUser):
     """Fungsi untuk mengedit profil yang sudah ada."""
     print("\n=== Profil Sekarang ===")
-    tampilkan_profil(profilUser)
+    tampilkanProfil(profilUser)
 
     # Meminta inputan untuk masing-masing atribut
-    profilUser['nama'] = input(f"Masukkan nama baru (atau tekan Enter untuk tetap '{profilUser['nama']}'): ") or profilUser['nama']
-    profilUser['jenisKelamin'] = input(f"Masukkan jenis kelamin baru (atau tekan Enter untuk tetap '{profilUser['jenisKelamin']}'): ") or profilUser['jenisKelamin']
-    profilUser['skalaAktivitas'] = float(input(f"Masukkan skala aktivitas fisik baru (atau tekan Enter untuk tetap '{profilUser['skalaAktivitas']}'): ") or profilUser['skalaAktivitas'])
-    profilUser['umur'] = float(input(f"Masukkan umur baru (atau tekan Enter untuk tetap '{profilUser['umur']}'): ") or profilUser['umur'])
-    profilUser['berat'] = float(input(f"Masukkan berat baru (atau tekan Enter untuk tetap '{profilUser['berat']}'): ") or profilUser['berat'])
-    profilUser['tinggi'] = float(input(f"Masukkan tinggi baru (atau tekan Enter untuk tetap '{profilUser['tinggi']}'): ") or profilUser['tinggi'])
-    profilUser['target'] = input(f"Masukkan target baru (atau tekan Enter untuk tetap '{profilUser['target']}'): ") or profilUser['target']
+    profilUser['Nama'] = input(f"Masukkan nama baru (atau tekan Enter untuk tetap '{profilUser['Nama']}'): ") or profilUser['Nama']
+    profilUser['JenisKelamin'] = input(f"Masukkan JenisKelamin baru (atau tekan Enter untuk tetap '{profilUser['JenisKelamin']}'): ") or profilUser['JenisKelamin']
+    profilUser['SkalaAktivitas'] = float(input(f"Masukkan skala aktivitas fisik baru (atau tekan Enter untuk tetap '{profilUser['SkalaAktivitas']}'): ") or profilUser['SkalaAktivitas'])
+    profilUser['Umur'] = float(input(f"Masukkan Umur baru (atau tekan Enter untuk tetap '{profilUser['Umur']}'): ") or profilUser['Umur'])
+    profilUser['Berat'] = float(input(f"Masukkan Berat baru (atau tekan Enter untuk tetap '{profilUser['Berat']}'): ") or profilUser['Berat'])
+    profilUser['Tinggi'] = float(input(f"Masukkan Tinggi baru (atau tekan Enter untuk tetap '{profilUser['Tinggi']}'): ") or profilUser['Tinggi'])
+    profilUser['Target'] = input(f"Masukkan Target baru (atau tekan Enter untuk tetap '{profilUser['Target']}'): ") or profilUser['Target']
     
     print("\nProfil berhasil diperbarui!")
     return profilUser
@@ -86,11 +91,11 @@ def profil(profilUser):
             pilihan = input("Pilih opsi (1-3): ")
 
             if pilihan == '1':
-                tampilkan_profil(profilUser)
+                tampilkanProfil(profilUser)
             elif pilihan == '2':
                 profilUser = edit_profil(profilUser)
             elif pilihan == '3':
-                print(kebutuhanKaloriHarian(profilUser['jenisKelamin'], profilUser['berat'], profilUser['tinggi'], profilUser['umur'], profilUser['skalaAktivitas'], profilUser['target']))
+                print(kebutuhan_kalori_harian(profilUser['JenisKelamin'], profilUser['Berat'], profilUser['Tinggi'], profilUser['Umur'], profilUser['SkalaAktivitas'], profilUser['Target']))
                 
             else:
                 print("Pilihan tidak valid. Silakan coba lagi.")
