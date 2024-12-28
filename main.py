@@ -60,12 +60,12 @@ def opsiMenu(ProfilUser):
         if ProfilUser:
             # Ambil kebutuhan kalori harian
             KaloriHarian = kebutuhan_kalori_harian(
-                ProfilUser['jenisKelamin'], 
-                ProfilUser['berat'], 
-                ProfilUser['tinggi'], 
-                ProfilUser['umur'], 
-                ProfilUser['skalaAktivitas'], 
-                ProfilUser['target']
+                ProfilUser['JenisKelamin'], 
+                ProfilUser['Berat'], 
+                ProfilUser['Tinggi'], 
+                ProfilUser['Umur'], 
+                ProfilUser['SkalaAktivitas'], 
+                ProfilUser['Target']
             )
             
             # Input kategori menu
@@ -73,7 +73,7 @@ def opsiMenu(ProfilUser):
             KategoriMenu = KategoriMenu.capitalize()  # Menyusun kategori menjadi format yang sesuai
 
             # Input tujuan (untuk menambah kalori harian sesuai target pengguna)
-            tujuan = ProfilUser['target']  # Misalnya 'naik', 'tetap', atau 'turun'
+            tujuan = ProfilUser['Target']  # Misalnya 'naik', 'tetap', atau 'turun'
 
             # Panggil fungsi rekomendasi menu dengan 3 argumen yang diperlukan
             rekomendasi = rekomendasi_menu(KategoriMenu, KaloriHarian, tujuan)
