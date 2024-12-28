@@ -2,7 +2,7 @@
 import pandas as pd
 from profil import profil, kebutuhan_kalori_harian
 from kalkulator import kalkulator
-from informasi_kalori import daftarInformasiKalori
+from informasi_kalori import daftar_informasi_kalori
 from rekomendasiMakanan import rekomendasi_menu
 
 
@@ -21,7 +21,7 @@ def menuUtama():
 #     elif Pilihan == '2':
 #         kalkulator()
 #     elif Pilihan == '3':
-#         daftarInformasiKalori()
+#         daftar_informasi_kalori()
 #     elif Pilihan == '4':
 #         # hitung_batas_kalori()
 #         rekomendasi_menu(KategoriMenu, KaloriHarian, tujuan)
@@ -54,7 +54,7 @@ def opsiMenu(ProfilUser):
     elif Pilihan == '2':
         kalkulator()
     elif Pilihan == '3':
-        daftarInformasiKalori()
+        daftar_informasi_kalori()
     elif Pilihan == '4':
         # Pastikan ProfilUser sudah ada
         if ProfilUser:

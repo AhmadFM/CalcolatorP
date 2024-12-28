@@ -2,9 +2,9 @@
 # from database import DatabaseKalori
 import pandas as pd
 
-Data = pd.read_csv("database1.csv")
-Data ['Nama Makanan'] = Data ['Nama Makanan'].str.lower()
-DatabaseKalori = Data.set_index('Nama Makanan').to_dict()['Kalori']
+DATA_MAKANAN = pd.read_csv("database1.csv")
+DATA_MAKANAN ['Nama DATA_MAKANAN'] = DATA_MAKANAN ['Nama Makanan'].str.lower()
+DatabaseKalori = DATA_MAKANAN.set_index('Nama Makanan').to_dict()['Kalori']
 
 TotalKalori = 0
 ListMakanan = []
