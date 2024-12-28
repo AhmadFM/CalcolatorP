@@ -2,7 +2,7 @@ from tabulate import tabulate
 import pandas as pd
 
 # Membaca file CSV
-DATA_MAKANAN = pd.read_csv("database1.csv")
+DATA_MAKANAN = pd.read_csv("database.csv")
 
 # Mengambil kolom yang dibutuhkan
 DaftarMakanan = DATA_MAKANAN.filter(items=['ID', 'Nama Makanan', 'Kalori'])
