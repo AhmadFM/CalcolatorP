@@ -1,134 +1,107 @@
-###########################
-##  CALCOLATOR PROJECT   ##
-###########################
+# main.py
+import pandas as pd
+from profil import profil, kebutuhanKaloriHarian
+from kalkulator import kalkulator
+from informasi_kalori import daftarInformasiKalori
+from rekomendasiMakanan import rekomendasi_menu
 
-##  VARIABEL UNIVERSAL  ##
-total_kalori = 0
 
-listMakanan = []
-
-databaseKalori = {#per100gr
-    "nasi" : 175,                        
-    "kentang" : 87,
-    "singkong" : 160,
-    "ubi jalar" : 86,
-    "Dada ayam goreng (dengan kulit)" : 216,
-    "Dada ayam goreng (tanpa kulit)" : 184,
-    "Bebek goreng" : 286,
-    "Ikan lele goreng" : 105,
-    "Bakso sapi" : 202,
-    "Chicken nugget" : 297,
-    "Telur rebus" : 68,
-    "Telur dadar" : 93,
-    "Telur ceplok" : 92,
-    "Tempe goreng" : 118,
-    "Tempe bacem" : 119,
-    "Tahu isi" : 124,
-    "Tahu" : 113,
-    "Sambel goreng kentang" : 107,
-    "Pepaya" : 39,
-    "Melon" : 34,
-    "Pisang" : 89,
-    "Buah pir" : 58,
-    "Nanas" : 48,
-    "Apel" : 72,
-    "Buah naga" : 51,
-    "Mangga" : 65,
-    "Anggur" : 69,
-    "Sayur" : 60,
-    "Daging sapi" : 288,
-    "Daging sapi panggang" : 267,
-    "Udang goreng" : 287,
-    "Ikan salmon" : 146,
-    "Bayam" : 40,
-    "Kacang almond" : 597,
-    "Yogurt (polos)" : 61,
-    "Susu" : 50, 
-    "Kacang kedelai" : 471,
-    "Daging kambing" : 109,
-    "Gulai kambing" : 125,
-    "Daging domba" : 266,
-    "Daging bebek" : 132,
-    "Ikan salmon" : 146,
-    "Cappucino" : 440,
-    "Mie instan": 137,
-    "Kacang tanah" : 567,
-    "Kacang rebus" : 318,
-    "Kacang panjang" : 59,
-    "Kerang hijau" : 171,
-    "Kerang" : 217,
-    "Keju" : 403
-}
-
-##   PROCEDURE LIST   ##
-def tampilkan_profil(profilUser):
-    print("\n=== Profil ===")
-    print(f"Nama: {profilUser['nama']}")
-    print(f"Umur: {profilUser['umur']} tahun")
-    print(f"Berat: {profilUser['berat']} kg")
-    print(f"Tinggi: {profilUser['tinggi']} cm") 
-   
-def menu_utama ():
+def menu_utama():
     print("\n=== Menu Utama ===")
     print("1. Profil")
-    print("2. Hitung Kalori Harian")
-    print("3. Keluar")
+    print("2. Hitung Total Kalori Makanan")
+    print("3. Informasi Kalori Makanan")
+    print("4. Rekomendasi Makanan")
+    print("5. Keluar")
 
-##  FUNCTION LIST   ##
-
-def profil():
-   profilUser = {
-        "nama": input ("Masukkan nama: "),
-        "umur": input ("Masukkan umur: "),
-        "berat":input ("Masukkan berat (kg): "),
-        "tinggi":input ("Masukkan tinggi (cm): ")
-    }   
-   return profilUser
-
-def kalkulator():
-    global totalKalori
-    totalKalori = 0 
-    listMakanan.clear()
-   
-    print("\n==== KALKULATOR KALORI ====")
-    jumlahMakanan = int(input("Masukkan jumlah jenis makanan yang Anda makan: "))
-    i = 0  # Counter untuk loop
-
-    while i < jumlahMakanan:
-        namaMakanan = input("Masukkan nama makanan: ")
-
-        if namaMakanan in databaseKalori:
-            listMakanan.append(namaMakanan)
-            totalKalori += databaseKalori[namaMakanan]
-            i += 1  # Hanya meningkat jika makanan ditemukan di database
-        else:
-            print(f"{namaMakanan} belum terdaftar dalam database. Silakan masukkan nama makanan yang lain.")
-
-    print(f"Total kalori yang Anda makan dari {listMakanan} adalah {totalKalori} kkal")
-
+# def opsi_menu(profilUser ):
+#     pilihan = input("Pilih opsi (1-5): ")
+#     if pilihan == '1':
+#         profilUser  = profil(profilUser)
+#     elif pilihan == '2':
+#         kalkulator()
+#     elif pilihan == '3':
+#         daftarInformasiKalori()
+#     elif pilihan == '4':
+#         # hitung_batas_kalori()
+#         rekomendasi_menu(kategori_menu, kalori_harian, tujuan)
+#         if profilUser :
+#             # Ambil kebutuhan kalori harian
+#             kalori_harian = kebutuhanKaloriHarian(profilUser ['jenisKelamin'], profilUser ['berat'], profilUser ['tinggi'], profilUser ['umur'], profilUser ['skalaAktivitas'], profilUser ['target'])
+#             # Input kategori menu
+#             kategori_menu = input("Pilih kategori menu (sarapan/makan siang/makan malam): ").lower()
+#             kategori_menu = kategori_menu.capitalize()
+#             # Panggil fungsi rekomendasi menu
+#             rekomendasi = rekomendasi_menu(profilUser ['target'], kalori_harian, kategori_menu)
+#             if rekomendasi:
+#                 print("\n==== Rekomendasi Makanan ====")
+#                 print(f"Karbohidrat: {rekomendasi['Kelompok']}")
+#                 print(f"Makanan Lain: {', '.join(rekomendasi['Makanan Lain'])}")
+#         else:
+#             print("Silahkan buat profil terlebih dahulu")
+#     elif pilihan == '5':
+#         print("=== Exit ===")
+#         return profilUser , True  # Menandakan bahwa pengguna memilih keluar
+#     else:
+#         print("Pilihan tidak valid. Silakan coba lagi.")
+#     return profilUser , False
+# # Menandakan bahwa pengguna tidak memilih keluar
 def opsi_menu(profilUser):
-    pilihan = input("Pilih opsi (1-3): ")
+    pilihan = input("Pilih opsi (1-5): ")
+    
     if pilihan == '1':
-        if not profilUser:
-            profilUser = profil()
-        else: 
-            tampilkan_profil(profilUser)
+        profilUser = profil(profilUser)
     elif pilihan == '2':
-        kalkulator()   
+        kalkulator()
     elif pilihan == '3':
-        main()
+        daftarInformasiKalori()
+    elif pilihan == '4':
+        # Pastikan profilUser sudah ada
+        if profilUser:
+            # Ambil kebutuhan kalori harian
+            kalori_harian = kebutuhanKaloriHarian(
+                profilUser['jenisKelamin'], 
+                profilUser['berat'], 
+                profilUser['tinggi'], 
+                profilUser['umur'], 
+                profilUser['skalaAktivitas'], 
+                profilUser['target']
+            )
+            
+            # Input kategori menu
+            kategori_menu = input("Pilih kategori menu (sarapan/makan siang/makan malam): ").lower()
+            kategori_menu = kategori_menu.capitalize()  # Menyusun kategori menjadi format yang sesuai
+
+            # Input tujuan (untuk menambah kalori harian sesuai target pengguna)
+            tujuan = profilUser['target']  # Misalnya 'naik', 'tetap', atau 'turun'
+
+            # Panggil fungsi rekomendasi menu dengan 3 argumen yang diperlukan
+            rekomendasi = rekomendasi_menu(kategori_menu, kalori_harian, tujuan)
+            
+            if rekomendasi:
+                print("\n==== Rekomendasi Makanan ====")
+                print(f"Kelompok: {rekomendasi['Kategori']}")
+                print(f"Makanan Utama: {rekomendasi['Makanan Utama']}")
+                print(f"Kalori Utama: {rekomendasi['Kalori Utama']}")
+                print(f"Makanan Tambahan: {', '.join(rekomendasi['Makanan Tambahan'])}")
+        else:
+            print("Silahkan buat profil terlebih dahulu.")
+    elif pilihan == '5':
+        print("=== Exit ===")
+        return profilUser, True  # Menandakan bahwa pengguna memilih keluar
     else:
         print("Pilihan tidak valid. Silakan coba lagi.")
-    return profilUser
     
+    return profilUser, False
+
+
 def main():
     profilUser  = {}
     while True:
         menu_utama()
-        profilUser  = opsi_menu(profilUser)
-        if not profilUser and input("Apakah Anda ingin keluar? (y/n): ").lower() == 'y':
-            break
-           
-##  MAIN PROGRAM  ##
+        profilUser , keluar = opsi_menu(profilUser)  # Menerima nilai `keluar` dari opsi_menu
+        if keluar:
+            if input("Apakah Anda ingin keluar? (y/n): ").lower() == 'y':
+                break
 
 main()
