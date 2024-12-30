@@ -120,7 +120,7 @@
 import pandas as pd
 
 # Membaca data dari file CSV
-DataBaseMakanan = pd.read_csv("database1.csv")
+DataBaseMakanan = pd.read_csv("database.csv")
 
 
 # Fungsi untuk menghitung kalori batas berdasarkan Tujuan pengguna
