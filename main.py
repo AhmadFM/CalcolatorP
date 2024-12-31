@@ -1,8 +1,8 @@
 # main.py
 import pandas as pd
-from profil import profil, kebutuhan_kalori_harian
+from profil import profil, kebutuhanKaloriHarian
 from kalkulator import kalkulator
-from informasi_kalori import daftar_informasi_kalori
+from informasi_kalori import daftarInformasiKalori
 from rekomendasiMakanan import rekomendasi_menu
 
 
@@ -54,18 +54,18 @@ def opsiMenu(ProfilUser):
     elif Pilihan == '2':
         kalkulator()
     elif Pilihan == '3':
-        daftar_informasi_kalori()
+        daftarInformasiKalori()
     elif Pilihan == '4':
         # Pastikan ProfilUser sudah ada
         if ProfilUser:
             # Ambil kebutuhan kalori harian
-            KaloriHarian = kebutuhan_kalori_harian(
-                ProfilUser['JenisKelamin'], 
-                ProfilUser['Berat'], 
-                ProfilUser['Tinggi'], 
-                ProfilUser['Umur'], 
-                ProfilUser['SkalaAktivitas'], 
-                ProfilUser['Target']
+            KaloriHarian = kebutuhanKaloriHarian(
+                ProfilUser['jenisKelamin'], 
+                ProfilUser['berat'],
+                ProfilUser['tinggi'], 
+                ProfilUser['umur'], 
+                ProfilUser['skalaAktivitas'], 
+                ProfilUser['target']
             )
             
             # Input kategori menu
@@ -73,7 +73,7 @@ def opsiMenu(ProfilUser):
             KategoriMenu = KategoriMenu.capitalize()  # Menyusun kategori menjadi format yang sesuai
 
             # Input tujuan (untuk menambah kalori harian sesuai target pengguna)
-            tujuan = ProfilUser['Target']  # Misalnya 'naik', 'tetap', atau 'turun'
+            tujuan = ProfilUser['target']  # Misalnya 'naik', 'tetap', atau 'turun'
 
             # Panggil fungsi rekomendasi menu dengan 3 argumen yang diperlukan
             rekomendasi = rekomendasi_menu(KategoriMenu, KaloriHarian, tujuan)

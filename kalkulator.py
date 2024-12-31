@@ -19,7 +19,7 @@ def kalkulator():
     i = 0  # Counter untuk loop
 
     while i < jumlahMakanan:
-        namaMakanan = input("Masukkan nama makanan: ")
+        namaMakanan = str(input("Masukkan nama makanan: ")).lower()
 
         if namaMakanan in databaseKalori: 
             listMakanan.append(namaMakanan)
