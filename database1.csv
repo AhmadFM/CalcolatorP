@@ -1,55 +1,55 @@
 ID,Nama Makanan,Kelompok,Tipe,Kalori,Kategori
-SE001,Beras,Serealia,Mentah,357,Sarapan
-SE002,Beras pelita,Serealia,Mentah,369,Sarapan
-SE003,Beras rojolele,Serealia,Mentah,357,Sarapan
-SE004,Beras Hitam ,Serealia,Mentah,351,Sarapan
+SE001,Beras,Serealia,Mentah,357,Makan Siang
+SE002,Beras pelita,Serealia,Mentah,369,Makan Siang
+SE003,Beras rojolele,Serealia,Mentah,357,Makan Siang
+SE004,Beras Hitam ,Serealia,Mentah,351,Makan Siang
 BU001,Apel,Buah,Mentah,58,Sarapan
 BU002,Alpukat,Buah,Mentah,85,Sarapan
 BU003,Anggur,Buah,Mentah,30,Sarapan
 BU004,Belimbing,Buah,Mentah,36,Sarapan
 BU005,Buah naga,Buah,Mentah,71,Sarapan
 BU006,Duku,Buah,Mentah,63,Sarapan
-BU007,Jambu biji,Buah,Mentah,49,Makan Siang
-BU008,Jambu air,Buah,Mentah,46,Makan Siang
-BU009,Jambu bol,Buah,Mentah,49,Makan Siang
-BU010,Jeruk,Buah,Mentah,45,Makan Siang
-BU011,Jeruk bali,Buah,Mentah,48,Makan Siang
-BU012,Kelapa,Buah,Mentah,68,Makan Siang
-BU013,Langsat,Buah,Mentah,56,Makan Siang
-BU014,Lemon,Buah,Mentah,34,Makan Siang
-BU015,Mangga,Buah,Mentah,52,Makan Siang
-BU016,Manggis,Buah,Mentah,63,Makan Siang
-BU017,Melon,Buah,Mentah,37,Makan Siang
-BU018,Nanas,Buah,Mentah,40,Makan Siang
-BU019,Nangka,Buah,Mentah,106,Makan Siang
-BU020,Pepaya,Buah,Mentah,46,Makan Siang
-BU021,Pisang,Buah,Mentah,127,Makan Siang
-BU022,Rambutan,Buah,Mentah,69,Makan Siang
-BU023,Salak,Buah,Mentah,77,Makan Siang
-BU024,Sawo,Buah,Mentah,111,Makan Siang
-BU025,Semangka,Buah,Mentah,28,Makan Siang
-BU026,Sirsak,Buah,Mentah,65,Makan Siang
-BU027,Srikaya,Buah,Mentah,63,Makan Siang
-BU028,Sukun,Buah,Mentah,126,Makan Siang
+BU007,Jambu biji,Buah,Mentah,49,Sarapan
+BU008,Jambu air,Buah,Mentah,46,Sarapan
+BU009,Jambu bol,Buah,Mentah,49,Sarapan
+BU010,Jeruk,Buah,Mentah,45,Sarapan
+BU011,Jeruk bali,Buah,Mentah,48,Sarapan
+BU012,Kelapa,Buah,Mentah,68,Sarapan
+BU013,Langsat,Buah,Mentah,56,Sarapan
+BU014,Lemon,Buah,Mentah,34,Sarapan
+BU015,Mangga,Buah,Mentah,52,Sarapan
+BU016,Manggis,Buah,Mentah,63,Sarapan
+BU017,Melon,Buah,Mentah,37,Sarapan
+BU018,Nanas,Buah,Mentah,40,Sarapan
+BU019,Nangka,Buah,Mentah,106,Sarapan
+BU020,Pepaya,Buah,Mentah,46,Sarapan
+BU021,Pisang,Buah,Mentah,127,Sarapan
+BU022,Rambutan,Buah,Mentah,69,Sarapan
+BU023,Salak,Buah,Mentah,77,Sarapan
+BU024,Sawo,Buah,Mentah,111,Sarapan
+BU025,Semangka,Buah,Mentah,28,Sarapan
+BU026,Sirsak,Buah,Mentah,65,Sarapan
+BU027,Srikaya,Buah,Mentah,63,Sarapan
+BU028,Sukun,Buah,Mentah,126,Sarapan
 SE005,Beras jagung kuning,Serealia,Mentah,358,Makan Siang
 SE006,Beras jagung putih,Serealia,Mentah,307,Makan Siang
 SE007,Beras ketan hitam tumbuk,Serealia,Mentah,360,Makan Siang
-SE008,Beras ketan putih tumbuk,Serealia,Mentah,361,Makan Malam
-SE009,Beras ladang,Serealia,Mentah,376,Makan Malam
-SE010,Beras menir,Serealia,Mentah,262,Makan Malam
-SE011,Beras parboiled,Serealia,Mentah,353,Makan Malam
-SE012,Beras tumbuk,Serealia,Mentah,354,Makan Malam
-SE013,Beras tumbuk merah,Serealia,Mentah,352,Makan Malam
-SE014,Cantel,Serealia,Mentah,366,Makan Malam
-SE015,Jagung muda,Serealia,Mentah,147,Makan Malam
-SE016,Jagung kuning pipil,Serealia,Mentah,366,Makan Malam
-SE017,Jagung pipil harapan,Serealia,Mentah,367,Makan Malam
-SE018,Jagung pipil metro,Serealia,Mentah,368,Makan Malam
-SE019,Jali,Serealia,Mentah,324,Makan Malam
-SE020,Jawawut,Serealia,Mentah,364,Makan Malam
-SE021,Jampang huma,Serealia,Mentah,350,Makan Malam
-SE021,Nasi,Serealia,Olahan,180,Makan Malam
-SE022,Nasi tim,Serealia,Olahan,120,Makan Malam
+SE008,Beras ketan putih tumbuk,Serealia,Mentah,361,Makan Siang
+SE009,Beras ladang,Serealia,Mentah,376,Makan Siang
+SE010,Beras menir,Serealia,Mentah,262,Makan Siang
+SE011,Beras parboiled,Serealia,Mentah,353,Makan Siang
+SE012,Beras tumbuk,Serealia,Mentah,354,Makan Siang
+SE013,Beras tumbuk merah,Serealia,Mentah,352,Makan Siang
+SE014,Cantel,Serealia,Mentah,366,Makan Siang
+SE015,Jagung muda,Serealia,Mentah,147,Makan Siang
+SE016,Jagung kuning pipil,Serealia,Mentah,366,Makan Siang
+SE017,Jagung pipil harapan,Serealia,Mentah,367,Makan Siang
+SE018,Jagung pipil metro,Serealia,Mentah,368,Makan Siang
+SE019,Jali,Serealia,Mentah,324,Makan Siang
+SE020,Jawawut,Serealia,Mentah,364,Makan Siang
+SE021,Jampang huma,Serealia,Mentah,350,Makan Siang
+SE021,Nasi,Serealia,Olahan,180,Makan Siang
+SE022,Nasi tim,Serealia,Olahan,120,Makan Siang
 SE023,Tapai beras,Serealia,Olahan,99,Makan Malam
 SE024,Tepung beras,Serealia,Olahan,353,Makan Malam
 KA001,Tempe, Kacang-kacangan,Olahan,118,Makan Malam
@@ -57,7 +57,26 @@ KA002,Tempe bacem,Kacang-kacangan,Olahan,119,Makan Malam
 KA003,Tahu,Kacang-kacangan,Olahan,113,Makan Malam
 DA001,Dada ayam goreng(dengan kulit),Daging,Mentah,216,Makan Malam
 DA002,Dada ayam goreng (tanpa kulit),Daging,Mentah,184,Makan Malam
-DA003,Bebek goreng,Daging,Olahan,286,Makan Malam
-DA004,Ikan lele goreng,Daging,Olahan,105,Makan Malam
-DA005,Bakso sapi,Daging,Olahan,202,Makan Malam
-DA006,Chicken nugget,Daging,Olahan,297,Makan Malam
+DA003,Bebek goreng,Daging,Olahan,286,Makan Siang
+DA004,Ikan lele goreng,Daging,Olahan,105,Makan Siang
+DA005,Bakso sapi,Daging,Olahan,202,Makan Siang
+DA006,Chicken nugget,Daging,Olahan,297,Makan Siang
+TE001,Telur ceplok,Telur,Olahan,201,Makan Malam
+TE002,Telur puyuh,Telur,Olahan,158,Makan Malam
+TE003,Telur bebek,Telur,Olahan,185,Makan Malam
+TE004,Telur ayam,Telur,Olahan,148,Makan Malam
+TE005,Telur rebus ,Telur,Olahan,155,Makan Malam
+TE006,Telur orak-arik,Telur,Olahan,202,Makan Malam
+SE025,Jagung,Serealia,Olahan,106,Sarapan
+BU029,Manggis,Buah,Olahan,73,Sarapan
+SA001,Wortel,Sayur-sayuran,Olahan,41,Makan Malam
+SA002,Bayam,Sayur-sayuran,Olahan,23,Makan Siang
+SA003,Brokoli,Sayur-sayuran,Olahan,34,Makan malam
+SA004,Buncis,Sayur-sayuran,Olahan,31,Makan malam
+SA005,Kacang panjang,Sayur-sayuran,Olahan,31,Makan malam
+SA006,Kentang rebus,Sayur-sayuran,Olahan,87,Sarapan
+SA007,Kentang goreng,Sayur-sayuran,Olahan,274,Sarapan
+SA008,Kentang panggang,Sayur-sayuran,Olahan,92,Sarapan
+SA009,Sawi,Sayur-sayuran,Olahan,42,Makan malam
+SA010,Kubis,Sayur-sayuran,Olahan,24,Makan Malam
+SA011,Mentimun,Sayur-sayuran,Olahan,15,Makan Malam
