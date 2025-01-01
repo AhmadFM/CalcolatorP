@@ -1,1 +1,3 @@
 Projek ini dibuat untuk melengkapi tugas mata kuliah.
+
+Referensi data untuk database kalori makanan: https://www.panganku.org/id-ID/view
