@@ -45,7 +45,7 @@ def kebutuhanKaloriHarian(jeniskelamin, berat, tinggi, umur, skalaAktivitas, tar
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
     profilUser = {
-        "nama": input("Masukkan nama: "),
+        "nama": str(input("Masukkan nama: ")),
         "jenisKelamin": input("Masukkan Jenis Kelamin (Pria/Wanita): ".lower()),
         "skalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
         "umur": float(input("Masukkan umur: ")),
