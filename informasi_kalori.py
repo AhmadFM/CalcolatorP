@@ -5,9 +5,6 @@ import pandas as pd
 # Membaca file CSV
 DATA_MAKANAN = pd.read_csv("database.csv")
 
-# Mengambil kolom yang dibutuhkan
-DaftarMakanan = DATA_MAKANAN.filter(items=['ID', 'Nama Makanan', 'Kalori'])
-
 def kategoriMakanan():
     print("1. Buah")
     print("2. Daging")
