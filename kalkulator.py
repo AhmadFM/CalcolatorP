@@ -1,31 +1,31 @@
 # kalkulator.py
-# from database import DatabaseKalori
+# from database import databaseKalori
 import pandas as pd
 
-DATA_MAKANAN = pd.read_csv("database1.csv")
-DATA_MAKANAN ['Nama DATA_MAKANAN'] = DATA_MAKANAN ['Nama Makanan'].str.lower()
-DatabaseKalori = DATA_MAKANAN.set_index('Nama Makanan').to_dict()['Kalori']
+data = pd.read_csv("database1.csv")
+data ['Nama Makanan'] = data ['Nama Makanan'].str.lower()
+databaseKalori = data.set_index('Nama Makanan').to_dict()['Kalori']
 
-TotalKalori = 0
-ListMakanan = []
+totalKalori = 0
+listMakanan = []
 
 def kalkulator():
-    global TotalKalori
-    TotalKalori = 0 
-    ListMakanan.clear()
+    global totalKalori
+    totalKalori = 0 
+    listMakanan.clear()
    
     print("\n==== KALKULATOR KALORI ====")
     jumlahMakanan = int(input("Masukkan jumlah jenis makanan yang Anda makan: "))
     i = 0  # Counter untuk loop
 
     while i < jumlahMakanan:
-        NamaMakanan = str(input("Masukkan nama makanan: ")).lower()
+        namaMakanan = str(input("Masukkan nama makanan: ")).lower()
 
-        if NamaMakanan in DatabaseKalori: 
-            ListMakanan.append(NamaMakanan)
-            TotalKalori += DatabaseKalori[NamaMakanan]
+        if namaMakanan in databaseKalori: 
+            listMakanan.append(namaMakanan)
+            totalKalori += databaseKalori[namaMakanan]
             i += 1  # Hanya meningkat jika makanan ditemukan di database
         else:
-            print(f"{NamaMakanan} belum terdaftar dalam database. Silakan masukkan nama makanan yang lain.")
+            print(f"{namaMakanan} belum terdaftar dalam database. Silakan masukkan nama makanan yang lain.")
 
-    print(f"Total kalori yang Anda makan dari {ListMakanan} adalah {TotalKalori} kkal")
+    print(f"Total kalori yang Anda makan dari {listMakanan} adalah {totalKalori} kkal")
