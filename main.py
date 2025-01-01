@@ -69,6 +69,7 @@ def opsiMenu(ProfilUser):
             )
             
             # Input kategori menu
+            KaloriHarian = int(input("Masukkan kalori harian Anda: "))
             KategoriMenu = input("Pilih kategori menu (sarapan/makan siang/makan malam): ").lower()
             KategoriMenu = KategoriMenu.capitalize()  # Menyusun kategori menjadi format yang sesuai
 
