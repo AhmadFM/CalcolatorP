@@ -15,9 +15,14 @@ def kalkulator():
     listMakanan.clear()
    
     print("\n==== KALKULATOR KALORI ====")
-    jumlahMakanan = int(input("Masukkan jumlah jenis makanan yang Anda makan: "))
-    i = 0  # Counter untuk loop
+    while True:
+        try:
+            jumlahMakanan = int(input("Masukkan jumlah Makanan yang Anda Makan: "))
+        except ValueError:
+            print("\nInput tidak sesuai:\nJumlah makanan harus berupa angka")
+        else: break
 
+    i = 0  # Counter untuk loop
     while i < jumlahMakanan:
         namaMakanan = str(input("Masukkan nama makanan: ")).lower()
 
