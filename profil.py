@@ -3,21 +3,13 @@
 profilUser = {}
 Biodata = ("Nama", "Umur", "Jenis Kelamin", "Berat Badan", "Tinggi Badan", "Skala Aktivitas", "Target")
 
+def cetak(profilUser):
+    for i in Biodata:
+        print(i, ': ', profilUser.get(i))
+
 def tampilkanProfil(profilUser):
     print("\n=== Profil ===")
-    print(f"Nama: {profilUser['Nama']}")
-    print(f"Umur: {profilUser['Umur']} tahun")
-    print(f"JenisKelamin: {profilUser['JenisKelamin']}")
-    print(f"Berat: {profilUser['Berat']} kg")
-    print(f"Tinggi: {profilUser['Tinggi']} cm")
-    print(f"Skala Aktivitas Fisik: {profilUser['SkalaAktivitas']}")
-    print(f"Target: {profilUser['Target']}")
-    print("Kebutuhan Kalori Harian: ", kebutuhan_kalori_harian(profilUser['JenisKelamin'], 
-                                                               profilUser['Berat'], 
-                                                               profilUser['Tinggi'], 
-                                                               profilUser['Umur'], 
-                                                               profilUser['SkalaAktivitas'], 
-                                                               profilUser['Target']))
+    cetak(profilUser)
    
 def kebutuhan_kalori_harian(JK, BB, TB, Umur, Skala, Target):
     
