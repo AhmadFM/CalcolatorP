@@ -141,8 +141,7 @@ def profil(profilUser):
             elif pilihan == '2':
                 profilUser = edit_profil(profilUser)
             elif pilihan == '3':
-                print(kebutuhan_kalori_harian(profilUser['JenisKelamin'], profilUser['Berat'], profilUser['Tinggi'], profilUser['Umur'], profilUser['SkalaAktivitas'], profilUser['Target']))
-                
+                print("Kebutuhan Harian Anda: ",kebutuhan_kalori_harian(profilUser['Jenis Kelamin'], profilUser['Berat Badan'], profilUser['Tinggi Badan'], profilUser['Umur'], profilUser['Skala Aktivitas'], profilUser['Target']), "kkal")
             else:
                 print("Pilihan tidak valid. Silakan coba lagi.")
     return profilUser
