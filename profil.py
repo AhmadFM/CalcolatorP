@@ -55,22 +55,25 @@ def buat_profil():
                     pilihan = ['pria', 'wanita']
                     profilUser[i] = str(input(f"{str(i)} : ")).lower()
                     if profilUser[i] not in pilihan:
-                        raise ValueError("Hanya Menerima pria/wanita")
+                        raise Exception("Hanya Menerima pria/wanita")
                     
                 elif i == 'Target':
                     pilihan = ['naik', 'tetap', 'turun']
                     profilUser[i] = str(input(f"{str(i)} (Naik/Tetap/Turun) : ").lower())
                     if profilUser[i] not in pilihan:
-                        raise ValueError("Target Tersedia Naik/Tetap/Turun")
+                        raise Exception("Target Tersedia Naik/Tetap/Turun")
                     
                 elif i == 'Skala Aktivitas':
                     profilUser[i] = float(input(f"{str(i)} (1 - 5) : "))
                     if not (1 <= profilUser[i] <= 5):
-                        raise ValueError("Silahkan Pilih Angka yang Sesuai (1 - 5)")
+                        raise Exception("Silahkan Pilih Angka yang Sesuai (1 - 5)")
                     
                 else:
                     profilUser[i] = float(input(f"{str(i)} : "))
-            except ValueError as e:
+
+            except ValueError:
+                print("Invalid Input: Silahkan Masukan Data yang Sesuai")
+            except Exception as e:
                 print(f"Invalid input: {e}")
             else:
                 break
