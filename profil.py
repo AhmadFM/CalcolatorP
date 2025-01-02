@@ -1,5 +1,8 @@
 # profil.py
 
+profilUser = {}
+Biodata = ("Nama", "Umur", "Jenis Kelamin", "Berat Badan", "Tinggi Badan", "Skala Aktivitas", "Target")
+
 def tampilkanProfil(profilUser):
     print("\n=== Profil ===")
     print(f"Nama: {profilUser['Nama']}")
@@ -49,15 +52,36 @@ def kebutuhan_kalori_harian(JK, BB, TB, Umur, Skala, Target):
 
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
-    profilUser = {
-        "Nama": input("Masukkan Nama: "),
-        "JenisKelamin": input("Masukkan JenisKelamin (Pria/Wanita): ".lower()),
-        "SkalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
-        "Umur": float(input("Masukkan Umur: ")),
-        "Berat": float(input("Masukkan Berat (kg): ")),
-        "Tinggi": float(input("Masukkan Tinggi (cm): ")),
-        "Target": str(input("Target Berat Badan (Turun/Tetap/Naik): ")).lower()
-    }
+    profilUser = {}
+    for i in Biodata:
+        while True:
+            try:
+                if i == 'Nama':
+                    profilUser[i] = str(input(f"{str(i)} : "))
+
+                elif i == 'Jenis Kelamin':
+                    pilihan = ['pria', 'wanita']
+                    profilUser[i] = str(input(f"{str(i)} : ")).lower()
+                    if profilUser[i] not in pilihan:
+                        raise ValueError("Hanya Menerima pria/wanita")
+                    
+                elif i == 'Target':
+                    pilihan = ['naik', 'tetap', 'turun']
+                    profilUser[i] = str(input(f"{str(i)} (Naik/Tetap/Turun) : ").lower())
+                    if profilUser[i] not in pilihan:
+                        raise ValueError("Target Tersedia Naik/Tetap/Turun")
+                    
+                elif i == 'Skala Aktivitas':
+                    profilUser[i] = float(input(f"{str(i)} (1 - 5) : "))
+                    if not (1 <= profilUser[i] <= 5):
+                        raise ValueError("Silahkan Pilih Angka yang Sesuai (1 - 5)")
+                    
+                else:
+                    profilUser[i] = float(input(f"{str(i)} : "))
+            except ValueError as e:
+                print(f"Invalid input: {e}")
+            else:
+                break
     return profilUser
 
 def edit_profil(profilUser):
