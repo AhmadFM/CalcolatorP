@@ -77,19 +77,47 @@ def buat_profil():
     return profilUser
 
 def edit_profil(profilUser):
-    """Fungsi untuk mengedit profil yang sudah ada."""
+    """Fungsi untuk mengedit profil yang sudah ada."""   
     print("\n=== Profil Sekarang ===")
-    tampilkanProfil(profilUser)
+    cetak(profilUser)
 
-    # Meminta inputan untuk masing-masing atribut
-    profilUser['Nama'] = input(f"Masukkan nama baru (atau tekan Enter untuk tetap '{profilUser['Nama']}'): ") or profilUser['Nama']
-    profilUser['JenisKelamin'] = input(f"Masukkan JenisKelamin baru (atau tekan Enter untuk tetap '{profilUser['JenisKelamin']}'): ") or profilUser['JenisKelamin']
-    profilUser['SkalaAktivitas'] = float(input(f"Masukkan skala aktivitas fisik baru (atau tekan Enter untuk tetap '{profilUser['SkalaAktivitas']}'): ") or profilUser['SkalaAktivitas'])
-    profilUser['Umur'] = float(input(f"Masukkan Umur baru (atau tekan Enter untuk tetap '{profilUser['Umur']}'): ") or profilUser['Umur'])
-    profilUser['Berat'] = float(input(f"Masukkan Berat baru (atau tekan Enter untuk tetap '{profilUser['Berat']}'): ") or profilUser['Berat'])
-    profilUser['Tinggi'] = float(input(f"Masukkan Tinggi baru (atau tekan Enter untuk tetap '{profilUser['Tinggi']}'): ") or profilUser['Tinggi'])
-    profilUser['Target'] = input(f"Masukkan Target baru (atau tekan Enter untuk tetap '{profilUser['Target']}'): ") or profilUser['Target']
-    
+    print("\n=== Edit Profil ===")    
+    for i in Biodata:
+        while True:
+            try:
+                DataBaru = input(f"{i} : ").lower()
+                if not DataBaru:
+                    break
+
+                if i == 'Nama':
+                    profilUser[i] = str(DataBaru)
+
+                elif i == 'Jenis Kelamin':
+                    pilihan = ['pria', 'wanita']
+                    if str(DataBaru).lower() not in pilihan:
+                        raise Exception("Hanya Menerima pria/wanita")
+                    profilUser[i] = str(DataBaru)
+                    
+                elif i == 'Target':
+                    pilihan = ['naik', 'tetap', 'turun']
+                    if str(DataBaru).lower() not in pilihan:
+                        raise Exception("Target Tersedia Naik/Tetap/Turun")
+                    profilUser[i] = str(DataBaru)
+                    
+                elif i == 'Skala Aktivitas':
+                    if not (1 <= int(DataBaru) <= 5):
+                        raise Exception("Silahkan Pilih Angka yang Sesuai (1 - 5)")
+                    profilUser[i] = int(DataBaru) 
+
+                else:
+                    profilUser[i] = int(DataBaru)
+
+            except ValueError:
+                print("Invalid Input: Silahkan Masukan Data yang Sesuai")
+            except Exception as e:
+                print(f"Invalid input: {e}")
+            else:
+                break
     print("\nProfil berhasil diperbarui!")
     return profilUser
 
