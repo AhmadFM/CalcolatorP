@@ -1,20 +1,15 @@
 # profil.py
 
+profilUser = {}
+Biodata = ("Nama", "Umur", "Jenis Kelamin", "Berat Badan", "Tinggi Badan", "Skala Aktivitas", "Target")
+
+def cetak(profilUser):
+    for i in Biodata:
+        print(i, ': ', profilUser.get(i))
+
 def tampilkanProfil(profilUser):
     print("\n=== Profil ===")
-    print(f"Nama: {profilUser['Nama']}")
-    print(f"Umur: {profilUser['Umur']} tahun")
-    print(f"JenisKelamin: {profilUser['JenisKelamin']}")
-    print(f"Berat: {profilUser['Berat']} kg")
-    print(f"Tinggi: {profilUser['Tinggi']} cm")
-    print(f"Skala Aktivitas Fisik: {profilUser['SkalaAktivitas']}")
-    print(f"Target: {profilUser['Target']}")
-    print("Kebutuhan Kalori Harian: ", kebutuhan_kalori_harian(profilUser['JenisKelamin'], 
-                                                               profilUser['Berat'], 
-                                                               profilUser['Tinggi'], 
-                                                               profilUser['Umur'], 
-                                                               profilUser['SkalaAktivitas'], 
-                                                               profilUser['Target']))
+    cetak(profilUser)
    
 def kebutuhan_kalori_harian(JK, BB, TB, Umur, Skala, Target):
     
@@ -49,31 +44,83 @@ def kebutuhan_kalori_harian(JK, BB, TB, Umur, Skala, Target):
 
 def buat_profil():
     """Fungsi untuk membuat profil baru."""
-    profilUser = {
-        "Nama": input("Masukkan Nama: "),
-        "JenisKelamin": input("Masukkan JenisKelamin (Pria/Wanita): ".lower()),
-        "SkalaAktivitas": float(input("Masukkan Skala Aktivitas Fisik (1-5): ")),
-        "Umur": float(input("Masukkan Umur: ")),
-        "Berat": float(input("Masukkan Berat (kg): ")),
-        "Tinggi": float(input("Masukkan Tinggi (cm): ")),
-        "Target": str(input("Target Berat Badan (Turun/Tetap/Naik): ")).lower()
-    }
+    profilUser = {}
+    for i in Biodata:
+        while True:
+            try:
+                if i == 'Nama':
+                    profilUser[i] = str(input(f"{str(i)} : "))
+
+                elif i == 'Jenis Kelamin':
+                    pilihan = ['pria', 'wanita']
+                    profilUser[i] = str(input(f"{str(i)} : ")).lower()
+                    if profilUser[i] not in pilihan:
+                        raise Exception("Hanya Menerima pria/wanita")
+                    
+                elif i == 'Target':
+                    pilihan = ['naik', 'tetap', 'turun']
+                    profilUser[i] = str(input(f"{str(i)} (Naik/Tetap/Turun) : ").lower())
+                    if profilUser[i] not in pilihan:
+                        raise Exception("Target Tersedia Naik/Tetap/Turun")
+                    
+                elif i == 'Skala Aktivitas':
+                    profilUser[i] = float(input(f"{str(i)} (1 - 5) : "))
+                    if not (1 <= profilUser[i] <= 5):
+                        raise Exception("Silahkan Pilih Angka yang Sesuai (1 - 5)")
+                    
+                else:
+                    profilUser[i] = float(input(f"{str(i)} : "))
+
+            except ValueError:
+                print("Invalid Input: Silahkan Masukan Data yang Sesuai")
+            except Exception as e:
+                print(f"Invalid input: {e}")
+            else:
+                break
     return profilUser
 
 def edit_profil(profilUser):
-    """Fungsi untuk mengedit profil yang sudah ada."""
+    """Fungsi untuk mengedit profil yang sudah ada."""   
     print("\n=== Profil Sekarang ===")
-    tampilkanProfil(profilUser)
+    cetak(profilUser)
 
-    # Meminta inputan untuk masing-masing atribut
-    profilUser['Nama'] = input(f"Masukkan nama baru (atau tekan Enter untuk tetap '{profilUser['Nama']}'): ") or profilUser['Nama']
-    profilUser['JenisKelamin'] = input(f"Masukkan JenisKelamin baru (atau tekan Enter untuk tetap '{profilUser['JenisKelamin']}'): ") or profilUser['JenisKelamin']
-    profilUser['SkalaAktivitas'] = float(input(f"Masukkan skala aktivitas fisik baru (atau tekan Enter untuk tetap '{profilUser['SkalaAktivitas']}'): ") or profilUser['SkalaAktivitas'])
-    profilUser['Umur'] = float(input(f"Masukkan Umur baru (atau tekan Enter untuk tetap '{profilUser['Umur']}'): ") or profilUser['Umur'])
-    profilUser['Berat'] = float(input(f"Masukkan Berat baru (atau tekan Enter untuk tetap '{profilUser['Berat']}'): ") or profilUser['Berat'])
-    profilUser['Tinggi'] = float(input(f"Masukkan Tinggi baru (atau tekan Enter untuk tetap '{profilUser['Tinggi']}'): ") or profilUser['Tinggi'])
-    profilUser['Target'] = input(f"Masukkan Target baru (atau tekan Enter untuk tetap '{profilUser['Target']}'): ") or profilUser['Target']
-    
+    print("\n=== Edit Profil ===")    
+    for i in Biodata:
+        while True:
+            try:
+                DataBaru = input(f"{i} : ").lower()
+                if not DataBaru:
+                    break
+
+                if i == 'Nama':
+                    profilUser[i] = str(DataBaru)
+
+                elif i == 'Jenis Kelamin':
+                    pilihan = ['pria', 'wanita']
+                    if str(DataBaru).lower() not in pilihan:
+                        raise Exception("Hanya Menerima pria/wanita")
+                    profilUser[i] = str(DataBaru)
+                    
+                elif i == 'Target':
+                    pilihan = ['naik', 'tetap', 'turun']
+                    if str(DataBaru).lower() not in pilihan:
+                        raise Exception("Target Tersedia Naik/Tetap/Turun")
+                    profilUser[i] = str(DataBaru)
+                    
+                elif i == 'Skala Aktivitas':
+                    if not (1 <= int(DataBaru) <= 5):
+                        raise Exception("Silahkan Pilih Angka yang Sesuai (1 - 5)")
+                    profilUser[i] = int(DataBaru) 
+
+                else:
+                    profilUser[i] = int(DataBaru)
+
+            except ValueError:
+                print("Invalid Input: Silahkan Masukan Data yang Sesuai")
+            except Exception as e:
+                print(f"Invalid input: {e}")
+            else:
+                break
     print("\nProfil berhasil diperbarui!")
     return profilUser
 
@@ -94,8 +141,7 @@ def profil(profilUser):
             elif pilihan == '2':
                 profilUser = edit_profil(profilUser)
             elif pilihan == '3':
-                print(kebutuhan_kalori_harian(profilUser['JenisKelamin'], profilUser['Berat'], profilUser['Tinggi'], profilUser['Umur'], profilUser['SkalaAktivitas'], profilUser['Target']))
-                
+                print("Kebutuhan Harian Anda: ",kebutuhan_kalori_harian(profilUser['Jenis Kelamin'], profilUser['Berat Badan'], profilUser['Tinggi Badan'], profilUser['Umur'], profilUser['Skala Aktivitas'], profilUser['Target']), "kkal")
             else:
                 print("Pilihan tidak valid. Silakan coba lagi.")
     return profilUser

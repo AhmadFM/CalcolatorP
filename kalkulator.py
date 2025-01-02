@@ -18,8 +18,12 @@ def kalkulator():
     while True:
         try:
             jumlahMakanan = int(input("Masukkan jumlah Makanan yang Anda Makan: "))
+            if jumlahMakanan < 1:
+                raise Exception()
         except ValueError:
-            print("\nInput tidak sesuai:\nJumlah makanan harus berupa angka")
+            print("\nInvalid input:\nJumlah makanan harus berupa angka!")
+        except Exception:
+            print("Invalid input: Harap Masukan Angka Lebih Dari 0!")
         else: break
 
     i = 0  # Counter untuk loop
