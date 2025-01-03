@@ -5,7 +5,7 @@ import random as rng
 KelompokMakanan = ["Daging", "Ikan/Kerang/Udang", "Kacang-Kacangan", "Buah", "Sayuran"]
 
 # Membaca data dari file CSV
-DataBaseMakanan = pd.read_csv("database.csv")
+DataBaseMakanan = pd.read_csv("database1.csv")
 
 # Fungsi untuk menghitung kalori batas berdasarkan Tujuan pengguna
 def hitung_batas(KaloriHarian, Tujuan):

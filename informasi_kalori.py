@@ -3,7 +3,7 @@ from tabulate import tabulate
 import pandas as pd
 
 # Membaca file CSV
-DATA_MAKANAN = pd.read_csv("database.csv")
+DATA_MAKANAN = pd.read_csv("database1.csv")
 
 def kategoriMakanan():
     print("1. Buah")
