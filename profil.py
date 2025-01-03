@@ -2,6 +2,7 @@
 
 profilUser = {}
 Biodata = ("Nama", "Umur", "Jenis Kelamin", "Berat Badan", "Tinggi Badan", "Skala Aktivitas", "Target")
+huruf = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def cetak(profilUser):
     for i in Biodata:
@@ -49,7 +50,12 @@ def buat_profil():
         while True:
             try:
                 if i == 'Nama':
-                    profilUser[i] = str(input(f"{str(i)} : "))
+                    Nama = str(input(f"{str(i)} : "))
+                    cek = list(Nama.lower())
+                    for j in cek:
+                        if j not in huruf:
+                            raise Exception("Input Hanya Bisa Berupa Huruf")
+                    profilUser[i] = str(Nama)
 
                 elif i == 'Jenis Kelamin':
                     pilihan = ['pria', 'wanita']
@@ -93,7 +99,12 @@ def edit_profil(profilUser):
                     break
 
                 if i == 'Nama':
-                    profilUser[i] = str(DataBaru)
+                    Nama = DataBaru.lower()
+                    cek = list(Nama)
+                    for j in cek:
+                        if j not in huruf:
+                            raise Exception("Input Hanya Bisa Berupa Huruf")
+                    profilUser[i] = str(Nama)
 
                 elif i == 'Jenis Kelamin':
                     pilihan = ['pria', 'wanita']
