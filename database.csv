@@ -2,7 +2,7 @@ ID,Nama Makanan,Kelompok,Tipe,Kalori,Kategori
 SE001,Beras,Serealia,Mentah,357,Makan Siang
 SE002,Beras pelita,Serealia,Mentah,369,Makan Siang
 SE003,Beras rojolele,Serealia,Mentah,357,Makan Siang
-SE004,Beras Hitam ,Serealia,Mentah,351,Makan Siang
+SE004,Beras Hitam,Serealia,Mentah,351,Makan Siang
 BU001,Apel,Buah,Mentah,58,Sarapan
 BU002,Alpukat,Buah,Mentah,85,Sarapan
 BU003,Anggur,Buah,Mentah,30,Sarapan
@@ -51,12 +51,12 @@ SE021,Jampang huma,Serealia,Mentah,350,Makan Siang
 SE021,Nasi,Serealia,Olahan,180,Makan Siang
 SE022,Nasi tim,Serealia,Olahan,120,Makan Siang
 SE023,Tapai beras,Serealia,Olahan,99,Makan Malam
-SE024,Tepung beras,Serealia,Olahan,353,Makan Malam
-KA001,Tempe, Kacang-kacangan,Olahan,118,Makan Malam
+SE024,nasi goreng,Serealia,Olahan,168,Sarapan
+KA001,Tempe,Kacang-kacangan,Olahan,118,Makan Malam
 KA002,Tempe bacem,Kacang-kacangan,Olahan,119,Makan Malam
 KA003,Tahu,Kacang-kacangan,Olahan,113,Makan Malam
-DA001,Dada ayam goreng(dengan kulit),Daging,Mentah,216,Makan Malam
-DA002,Dada ayam goreng (tanpa kulit),Daging,Mentah,184,Makan Malam
+DA001,ayam goreng,Daging,Olahan,270,Makan Malam
+DA002,ayam goreng (tanpa kulit),Daging,olahan,186,Makan Siang
 DA003,Bebek goreng,Daging,Olahan,286,Makan Siang
 SE001,Ikan lele goreng,Seafood,Olahan,105,Makan Siang
 DA004,Bakso sapi,Daging,Olahan,202,Makan Siang
@@ -65,7 +65,7 @@ TE001,Telur ceplok,Telur,Olahan,201,Makan Malam
 TE002,Telur puyuh,Telur,Olahan,158,Makan Malam
 TE003,Telur bebek,Telur,Olahan,185,Makan Malam
 TE004,Telur ayam,Telur,Olahan,148,Makan Malam
-TE005,Telur rebus ,Telur,Olahan,155,Makan Malam
+TE005,Telur rebus,Telur,Olahan,155,Makan Malam
 TE006,Telur orak-arik,Telur,Olahan,202,Makan Malam
 SE025,Jagung,Serealia,Olahan,106,Sarapan
 BU029,Manggis,Buah,Olahan,73,Sarapan
@@ -89,3 +89,13 @@ SE007,Udang,Seafood,Olahan,144,Makan Malam
 SE008,Ikan salmon,Seafood,Olahan,146,Makan Malam
 SE009,Ikan tuna,Seafood,Olahan,116,Makan Malam
 SE010,Ikan sarden,Seafood,Olahan,186,Makan Malam
+FR001,Ayam,Daging,mentah,298,Makan Siang
+FR002,Sapi ,Daging,Olahan,301,Makan Siang
+FR003,Gulai Kambing,Daging,Olahan,126,Makan Siang
+FR004,Sop Kambing,Daging,Olahan,34,Makan Siang
+FR005,Rendang Sapi,Daging,Olahan,193,Makan Malam
+FR006,Abon,Daging,Olahan,358,Sarapan
+FR007,Sosis,Daging,Olahan,448,Sarapan
+FR008,Rawon,Daging,Olahan,60,Makan Malam
+FR009,Soto ,Daging,Olahan,110,Makan Malam
+FR010,Usus Ayam,Daging,Olahan,473,Makan Siang
