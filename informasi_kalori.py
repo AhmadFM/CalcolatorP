@@ -24,7 +24,7 @@ def daftar_informasi_kalori():
         Kelompok = 'Daging'
         Hasil = DATA_MAKANAN[DATA_MAKANAN["Kelompok"].str.lower() == Kelompok.lower()].sort_values("Nama Makanan")
     elif kategori == '3':
-        Kelompok = 'Ikan/Kerang/Udang'
+        Kelompok = 'Seafood'
         Hasil = DATA_MAKANAN[DATA_MAKANAN["Kelompok"].str.lower() == Kelompok.lower()].sort_values("Nama Makanan")
     elif kategori == '4':
         Kelompok = 'Kacang-Kacangan'
