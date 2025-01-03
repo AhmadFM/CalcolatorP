@@ -28,16 +28,16 @@ def opsiMenu(ProfilUser):
         if ProfilUser:
             # Ambil kebutuhan kalori harian
             KaloriHarian = kebutuhan_kalori_harian(
-                ProfilUser['JenisKelamin'], 
-                ProfilUser['Berat'], 
-                ProfilUser['Tinggi'], 
+                ProfilUser['Jenis Kelamin'], 
+                ProfilUser['Berat Badan'], 
+                ProfilUser['Tinggi Badan'], 
                 ProfilUser['Umur'], 
-                ProfilUser['SkalaAktivitas'], 
+                ProfilUser['Skala Aktivitas'], 
                 ProfilUser['Target']
             )
             
             # Input kategori menu
-            KaloriHarian = int(input("Masukkan kalori harian Anda: "))
+            # KaloriHarian = int(input("Masukkan kalori harian Anda: "))
             KategoriMenu = input("Pilih kategori menu (sarapan/makan siang/makan malam): ").lower()
             KategoriMenu = KategoriMenu.capitalize()  # Menyusun kategori menjadi format yang sesuai
 
@@ -52,7 +52,7 @@ def opsiMenu(ProfilUser):
                 print(f"Kelompok: {rekomendasi['Kategori']}")
                 print(f"Makanan Utama: {rekomendasi['Makanan Utama']}")
                 print(f"Kalori Utama: {rekomendasi['Kalori Utama']}")
-                print(f"Makanan Tambahan: {', '.join(rekomendasi['Makanan Tambahan'])}")
+                print(f"Makanan Pilihan: {', '.join(rekomendasi['Makanan Pilihan'])}")
         else:
             print("Silahkan buat profil terlebih dahulu.")
     elif Pilihan == '5':
