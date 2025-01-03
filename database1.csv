@@ -58,9 +58,9 @@ KA003,Tahu,Kacang-kacangan,Olahan,113,Makan Malam
 DA001,Dada ayam goreng(dengan kulit),Daging,Mentah,216,Makan Malam
 DA002,Dada ayam goreng (tanpa kulit),Daging,Mentah,184,Makan Malam
 DA003,Bebek goreng,Daging,Olahan,286,Makan Siang
-DA004,Ikan lele goreng,Daging,Olahan,105,Makan Siang
-DA005,Bakso sapi,Daging,Olahan,202,Makan Siang
-DA006,Chicken nugget,Daging,Olahan,297,Makan Siang
+SE001,Ikan lele goreng,Seafood,Olahan,105,Makan Siang
+DA004,Bakso sapi,Daging,Olahan,202,Makan Siang
+DA005,Chicken nugget,Daging,Olahan,297,Makan Siang
 TE001,Telur ceplok,Telur,Olahan,201,Makan Malam
 TE002,Telur puyuh,Telur,Olahan,158,Makan Malam
 TE003,Telur bebek,Telur,Olahan,185,Makan Malam
@@ -80,3 +80,12 @@ SA008,Kentang panggang,Sayuran,Olahan,92,Sarapan
 SA009,Sawi,Sayuran,Olahan,42,Makan malam
 SA010,Kubis,Sayuran,Olahan,24,Makan Malam
 SA011,Mentimun,Sayuran,Olahan,15,Makan Malam
+SE002,Cumi-cumi,Seafood,Olahan,92,Makan Malam
+SE003,Gurita,Seafood,Olahan,82,Makan Malam
+SE004,Tiram,Seafood,Olahan,68,Makan Malam
+SE005,Kepiting,Seafood,Olahan,101,Makan Malam
+SE006,Lobster,Seafood,Olahan,114,Makan Malam
+SE007,Udang,Seafood,Olahan,144,Makan Malam
+SE008,Ikan salmon,Seafood,Olahan,146,Makan Malam
+SE009,Ikan tuna,Seafood,Olahan,116,Makan Malam
+SE010,Ikan sarden,Seafood,Olahan,186,Makan Malam

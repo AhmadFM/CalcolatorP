@@ -8,7 +8,7 @@ DATA_MAKANAN = pd.read_csv("database.csv")
 def kategoriMakanan():
     print("1. Buah")
     print("2. Daging")
-    print("3. Ikan/Kerang/Udang")
+    print("3. Seafood")
     print("4. Kacang-Kacangan")
     print("5. Sayuran")
     print("6. Serealia")
