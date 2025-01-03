@@ -1,9 +1,11 @@
 
 import pandas as pd
+import random as rng
+
+KelompokMakanan = ["Daging", "Ikan/Kerang/Udang", "Kacang-Kacangan", "Buah", "Sayuran"]
 
 # Membaca data dari file CSV
 DataBaseMakanan = pd.read_csv("database.csv")
-
 
 # Fungsi untuk menghitung kalori batas berdasarkan Tujuan pengguna
 def hitung_batas(KaloriHarian, Tujuan):
@@ -29,21 +31,33 @@ def rekomendasi_menu(Kategori, KaloriHarian, Tujuan):
         return None
 
     # Pilih makanan utama (kalori terendah)
-    MakananTerpilih = filtered_df.iloc[0]
+    Karbo = filtered_df[filtered_df['Kelompok'].str.lower() == 'serealia']
+    if Karbo.empty:
+        print(f"Tidak ada makanan dalam kategori {Kategori}.")
+        return None
+    Utama = Karbo.sample(frac=1, # Frac=1 untuk mengacak data 
+                          ).reset_index(drop=True) # reset_index untuk mengatur ulang index
+    Utama = Utama.iloc[-1]
+    
+    # Daftar Makanan Tambahan 
+    Other = filtered_df[filtered_df['Kelompok'].str.lower() != 'serealia']
+    Other = Other.sample(frac=1, # Frac=1 untuk mengacak data 
+                          ).reset_index(drop=True) # reset_index untuk mengatur ulang index
+    
 
     # Cari makanan tambahan
     MakananLainnya = []
-    SisaKalori = Batas - MakananTerpilih["Kalori"]
-    for _, Makanan in filtered_df.iterrows():
+    SisaKalori = Batas - Utama['Kalori']
+    for _, Makanan in Other.iterrows():
         if Makanan["Kalori"] <= SisaKalori:
             MakananLainnya.append(Makanan["Nama Makanan"])
             SisaKalori -= Makanan["Kalori"]
 
     return {
         'Kategori': Kategori,
-        'Makanan Utama': MakananTerpilih["Nama Makanan"],
-        'Kalori Utama': MakananTerpilih["Kalori"],
-        'Makanan Tambahan': MakananLainnya
+        'Makanan Utama': Utama["Nama Makanan"],
+        'Kalori Utama': Utama["Kalori"],
+        'Makanan Pilihan': MakananLainnya[:5]
     }
 
 # Input dari pengguna
